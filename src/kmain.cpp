@@ -29,7 +29,7 @@ extern "C" void kmain(const multiboot::Info* mbinfo, u32 magic) {
 
   // Print to screen to see everything is working.
   display::clearScreen();
-  display::println("Welcome to spideros");
+  display::println("Welcome to hobos");
   display::println("===================");
 
   if (mbinfo->hasFlag(multiboot::BOOTLOADER_NAME)) {

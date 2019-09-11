@@ -51,7 +51,7 @@ struct Info {
   u32 bootDevice;
 
   // The command line passed to the kernel by the bootloader.
-  // Example: /system/spideros.exe
+  // Example: /system/hobos.exe
   u32 commandLine;
 
   // Boot module list

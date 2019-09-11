@@ -33,8 +33,8 @@ env['CC'] = os.getenv('CC') or env['CC']
 env['CXX'] = os.getenv('CXX') or env['CXX']
 env['ENV'].update(x for x in os.environ.items() if x[0].startswith('CCC_'))
 
-spideros_exe = env.Program(
-    target = 'isofs/system/spideros.exe',
+hobos_exe = env.Program(
+    target = 'isofs/system/hobos.exe',
     source = [
         'src/assert.cpp',
         'src/boot.asm',
@@ -56,9 +56,9 @@ spideros_exe = env.Program(
         '-Tlinker.ld',
     ],
 )
-Depends(spideros_exe, 'linker.ld')
+Depends(hobos_exe, 'linker.ld')
 
-env.Command('spideros.iso', spideros_exe, 'grub-mkrescue -o $TARGET isofs')
+env.Command('hobos.iso', hobos_exe, 'grub-mkrescue -o $TARGET isofs')
 
 if ARGUMENTS.get('debug') == '1':
     env.Append(CPPFLAGS = ['-g'], ASFLAGS = ['-g'])
